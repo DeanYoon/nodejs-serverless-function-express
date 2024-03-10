@@ -14,6 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       { role: "user", content: data },
     ],
     model: "gpt-3.5-turbo",
+    max_tokens: 100,
   });
 
   res.send(response.choices[0].message.content);
